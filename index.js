@@ -48,13 +48,20 @@ function sortOne() {
 // When the "Sort All" button is clicked, all the numbers in the number bank should be moved into either the odd or even category.
 
 function sortAll() {
-  for (let i = 0; i < state.bank.length; i++) {
-    if (i % 2 == 0) {
-      state.odd.push(state.bank[i]);
+  // for (let i = 0; i < state.bank.length; i++) {
+  //   if (i % 2 !== 0) {
+  //     state.odd.push(state.bank[i]);
+  //   } else {
+  //     state.even.push(state.bank[i]);
+  //   }
+  // }
+  state.bank.forEach((i) => {
+    if (i % 2 !== 0) {
+      state.odd.push(i);
     } else {
-      state.even.push(state.bank[i]);
+      state.even.push(i);
     }
-  }
+  });
 }
 
 const printOddNumbers = () => {
